@@ -1,6 +1,9 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - uname -a
   pre_build:
     commands:
       - echo "Installing third-party dependencies"
