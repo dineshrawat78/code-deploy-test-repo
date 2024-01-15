@@ -5,13 +5,12 @@ phases:
     commands:
       - echo "Installing third-party dependencies"
       - echo "CODEBUILD_SRC_DIR is $CODEBUILD_SRC_DIR"
-      - curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
-      - docker run
+      - aws s3 cp s3://sec1demobucket/sec1-cli-linux /usr/local/bin
 
   build:
     commands:
       - echo "Building the application"
-      - syft $CODEBUILD_SRC_DIR
+      - ls /usr/local/bin
 
   post_build:
     commands:
