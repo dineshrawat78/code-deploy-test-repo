@@ -6,6 +6,7 @@ phases:
       - echo "Installing third-party dependencies"
       - echo "CODEBUILD_SRC_DIR is $CODEBUILD_SRC_DIR"
       - aws s3 cp s3://sec1demobucket/sec1-cli-linux /usr/local/bin
+      - chmod 777 /usr/local/bin/sec1-cli-linux
 
   build:
     commands:
