@@ -5,7 +5,7 @@ phases:
     commands:
       - echo "Installing third-party dependencies"
       - make --version
-      - brew install syft
+      - curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
 
   build:
     commands:
