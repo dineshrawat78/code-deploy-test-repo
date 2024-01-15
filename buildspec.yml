@@ -14,7 +14,6 @@ phases:
   build:
     commands:
       - echo "Building the application"
-      - ls -ltr $CODEBUILD_SRC_DIR
       - $CODEBUILD_SRC_DIR/sec1-cli-linux scan $CODEBUILD_SRC_DIR --apiKey $API_KEY
 
   post_build:
