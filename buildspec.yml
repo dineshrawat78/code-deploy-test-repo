@@ -4,13 +4,13 @@ phases:
   pre_build:
     commands:
       - echo "Installing third-party dependencies"
-      - echo CODEBUILD_SRC_DIR
+      - echo "CODEBUILD_SRC_DIR is $CODEBUILD_SRC_DIR"
       - curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
 
   build:
     commands:
       - echo "Building the application"
-      - syft
+      - syft $CODEBUILD_SRC_DIR
 
   post_build:
     commands:
