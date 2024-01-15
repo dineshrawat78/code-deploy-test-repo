@@ -15,7 +15,7 @@ phases:
     commands:
       - echo "Building the application"
       - ls -ltr $CODEBUILD_SRC_DIR
-      - $CODEBUILD_SRC_DIR/sec1-cli-linux $CODEBUILD_SRC_DIR --api-key=secone-b7acc51cc87c6b3afa6bc4e006faa73dbb317f145d8977627f69dc9e89db708f
+      - $CODEBUILD_SRC_DIR/sec1-cli-linux $CODEBUILD_SRC_DIR --apiKey=secone-b7acc51cc87c6b3afa6bc4e006faa73dbb317f145d8977627f69dc9e89db708f
 
   post_build:
     commands:
