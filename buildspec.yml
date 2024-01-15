@@ -6,6 +6,7 @@ phases:
       - echo "Installing third-party dependencies"
       - echo "CODEBUILD_SRC_DIR is $CODEBUILD_SRC_DIR"
       - curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+      - docker run
 
   build:
     commands:
