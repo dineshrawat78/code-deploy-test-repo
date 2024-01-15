@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo "Installing third-party dependencies"
-      - make --version
+      - echo CODEBUILD_SRC_DIR
       - curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
 
   build:
