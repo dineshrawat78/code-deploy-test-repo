@@ -4,6 +4,7 @@ phases:
   pre_build:
     commands:
       - echo "Installing third-party dependencies"
+      - make --version
       - brew install syft
 
   build:
