@@ -4,6 +4,8 @@ phases:
   pre_build:
     commands:
       - echo "Installing third-party dependencies"
+      - curl -O https://sourceforge.net/projects/syft.mirror/files/v0.100.0/syft_0.100.0_linux_amd64.rpm
+      - chmod +x syft_0.100.0_linux_amd64.rpm
 
   build:
     commands:
