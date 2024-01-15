@@ -5,14 +5,14 @@ phases:
     commands:
       - echo "Installing third-party dependencies"
       - echo "CODEBUILD_SRC_DIR is $CODEBUILD_SRC_DIR"
-      - aws s3 cp s3://sec1demobucket/sec1-cli-linux /usr/local/bin
-      - chmod 777 /usr/local/bin/sec1-cli-linux
+      - aws s3 cp s3://sec1demobucket/sec1-cli-linux $CODEBUILD_SRC_DIR
+      - chmod +x $CODEBUILD_SRC_DIR/sec1-cli-linux
 
   build:
     commands:
       - echo "Building the application"
-      - ls /usr/local/bin
-      - /usr/local/bin/sec1-cli-linux $CODEBUILD_SRC_DIR --api-key=secone-b7acc51cc87c6b3afa6bc4e006faa73dbb317f145d8977627f69dc9e89db708f
+      - ls $CODEBUILD_SRC_DIR
+      - $CODEBUILD_SRC_DIR/sec1-cli-linux $CODEBUILD_SRC_DIR --api-key=secone-b7acc51cc87c6b3afa6bc4e006faa73dbb317f145d8977627f69dc9e89db708f
 
   post_build:
     commands:
