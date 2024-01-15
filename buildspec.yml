@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Installing third-party dependencies"
+
+  build:
+    commands:
+      - echo "Building the application"
+
+  post_build:
+    commands:
+      - echo "Running post-build steps"
