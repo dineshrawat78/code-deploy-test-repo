@@ -24,6 +24,8 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
           paths:
             - ~/.m2/repository
+      - sec1-orb/scan:
+          api_key: ${SEC1_API_KEY}
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
@@ -33,8 +35,6 @@ jobs:
       - run:
           name: deploy
           command: '#e.g. ./deploy.sh'
-      - sec1-orb/scan:
-          api_key: ${SEC1_API_KEY}
 workflows:
   build-and-test:
     jobs:
