@@ -1,6 +1,8 @@
 # This config was automatically generated from your source code
 # Stacks detected: deps:java:.
 version: 2.1
+orbs:
+  sec1-orb: sec1/sec1-orb@1.0.14
 jobs:
   test-java:
     docker:
@@ -31,6 +33,8 @@ jobs:
       - run:
           name: deploy
           command: '#e.g. ./deploy.sh'
+      - sec1-orb/scan:
+          api_key: ${SEC1_API_KEY}
 workflows:
   build-and-test:
     jobs:
